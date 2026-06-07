@@ -1,0 +1,59 @@
+PROBLEM STATEMENT :
+
+Find the largest element in the given array.
+
+EXAMPLE :
+INPUT :  [4, 7, 2, 9, 5]
+OUTPUT : 9
+
+APPROACH : 
+
+Assume the first element is the largest.
+Traverse the array from index 1.
+Compare each element with the current largest.
+Update largest whenever a bigger element is found.
+
+// Problem: Find Largest Element in Array
+
+import java.util.Scanner;
+
+public class LargestElement {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Enter array size
+        System.out.print("Enter array size: ");
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        // Enter array elements
+        System.out.println("Enter array elements:");
+
+        for(int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Assume first element is largest
+        int largest = arr[0];
+
+        // Traverse array
+        for(int i = 1; i < n; i++) {
+
+            if(arr[i] > largest) {
+                largest = arr[i];
+            }
+        }
+
+        // Print largest element
+        System.out.println("Largest element is " + largest);
+    }
+}
+
+Time Complexity
+O(n)
+
+Space Complexity
+O(1)
